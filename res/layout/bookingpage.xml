@@ -1,22 +1,24 @@
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
-  
-            
-    <RelativeLayout
+  	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+   	<RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="80dp"
         android:background="#347B75"
         android:orientation="vertical" >
-
-           <ImageView
+      <ImageView
             android:id="@+id/imageView1"
             android:layout_width="30dp"
             android:layout_height="40dp"
-             android:layout_alignParentLeft="true"
-            android:src="@drawable/ic_drawer" />
+            android:layout_alignParentLeft="true"
+             android:src="@drawable/ic_drawer" />
        <EditText
             android:id="@+id/editText1"
             android:layout_width="match_parent"
@@ -30,17 +32,13 @@
          >
            
        </EditText>
- 
-    
-
-        <TabHost
+      <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         
         >
-
-        <RelativeLayout
+	   <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical" >
@@ -49,7 +47,6 @@
                 android:id="@android:id/tabcontent"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-               
                  />
 
             <android.support.v4.view.ViewPager
@@ -67,30 +64,45 @@
                 android:orientation="horizontal" >
 
             </TabWidget>
-
-           
         </RelativeLayout>
-
-    </TabHost>
-
-           </RelativeLayout>
-
-    <FrameLayout
+	  </TabHost>
+       </RelativeLayout>
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@drawable/map"
         android:orientation="vertical" >
-	<RelativeLayout
+     
+
+<SlidingDrawer
+    android:id="@+id/drawer"
+    android:layout_width="fill_parent"
+    android:layout_height="100dip"
+    android:layout_alignParentBottom= "true"
+    android:content="@+id/content"
+    android:handle="@+id/handle"
+    android:padding="10dip"
+    android:orientation="vertical" >
+
+        <Button
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity = "bottom"
-            android:orientation="vertical" >
-      <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-          android:gravity = "bottom"
-         
-        android:orientation="vertical" >
+            android:layout_height="wrap_content"
+            android:id="@+id/handle"
+            android:text="click"
+            >
+            </Button>
+      
+   
+ 
+     
+<RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity = "bottom"
+        android:orientation="vertical"
+        android:background="#cccccc"
+         >
         <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
@@ -132,10 +144,7 @@
                 android:layout_alignLeft="@+id/textView2"
                 android:text="weight charges"
                 android:textSize="10sp" />
-
-            
-
-      <TextView
+   		<TextView
           android:id="@+id/textView1"
           android:layout_width="wrap_content"
           android:layout_height="30dp"
@@ -143,20 +152,25 @@
           android:layout_alignParentLeft="true"
           android:text="Capacity" />
        <View
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:layout_above="@+id/textView1"
-    android:background="@android:color/darker_gray"
-    />
+		    android:layout_width="match_parent"
+		    android:layout_height="1dp"
+		    android:layout_above="@+id/textView1"
+		    android:background="@android:color/darker_gray"
+		/>
 
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
-    </android.support.v4.view.ViewPager>
-</RelativeLayout>
-</RelativeLayout>
-    </FrameLayout>
+	   <android.support.v4.view.ViewPager
+	       android:layout_width="match_parent"
+	       android:layout_height="match_parent"
+	       android:layout_alignParentLeft="true"
+	       android:layout_alignTop="@+id/view1" >
+
+	    </android.support.v4.view.ViewPager>
+	</RelativeLayout>
+
+</SlidingDrawer>
+
+   </RelativeLayout>
+
 
 </LinearLayout>
+   </LinearLayout>

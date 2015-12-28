@@ -56,30 +56,9 @@ public class Register extends Activity{
 	        b1=(Button)findViewById(R.id.button1);
 	         
 	          b1.setOnClickListener(new click());
-	          pass.setOnFocusChangeListener(new setOnFocusChangeListener());
+	         
 	 }
-	 public class setOnFocusChangeListener implements android.view.View.OnFocusChangeListener
-	 {
-
-		@Override
-		public void onFocusChange(View v, boolean hasFocus) {
-			// TODO Auto-generated method stub
-			if(hasFocus){
-//				var foo = phno.getText().toString();
-//				foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
-				Pattern sameDigits = Pattern.compile("(\\d)(\\1){3,}");
-
-				String num =  phno.getText().toString();
-				    if (sameDigits.matcher(num).matches())
-				        System.out.println("Same digits: " + num);
-				    else
-				        System.out.println("Not same digits: " + num);
-		        Toast.makeText(getApplicationContext(), "got the focus", Toast.LENGTH_LONG).show();
-		    }else {
-		        Toast.makeText(getApplicationContext(), "lost the focus", Toast.LENGTH_LONG).show();
-		    }
-		}
-		};
+	
 
 		 
 	 
